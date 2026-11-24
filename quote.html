@@ -16,12 +16,14 @@ input,textarea,button{font-family:inherit}
 input:focus,textarea:focus,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #0B6FB8;outline-offset:2px}
 input::placeholder,textarea::placeholder{color:#6B7482}
 .wrap{max-width:680px;margin:0 auto;padding:0 20px}
-header{background:#fff;border-bottom:1px solid #E3E8EF}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #E3E8EF}
 header .wrap{padding-top:10px;padding-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1A2433;min-height:44px}
 .brand img{width:40px;height:40px;display:block}
 .brand span{font-size:20px;font-weight:900;letter-spacing:-.5px}
-.tel{text-decoration:none;color:#0B6FB8;font-weight:700;font-size:16px;min-height:44px;display:flex;align-items:center}
+.tel{text-decoration:none;background:#F5B82E;color:#1A2433;font-weight:700;font-size:16px;min-height:44px;padding:8px 16px;border-radius:999px;display:flex;align-items:center}
+.tel-mobile{display:none}
+@media(max-width:599px){.tel-desktop{display:none}.tel-mobile{display:inline}.tel{padding:8px 13px;font-size:15px}}
 main{padding:28px 0 64px;display:flex;flex-direction:column;gap:22px}
 .back{align-self:flex-start;font-size:15px;text-decoration:none;color:#4A5566;min-height:44px;display:flex;align-items:center;gap:6px}
 h1{margin:0;font-size:clamp(26px,6.4vw,36px);line-height:1.3;font-weight:900;letter-spacing:-1px}
@@ -61,7 +63,7 @@ summary{cursor:pointer;min-height:32px}
 <body>
 <header><div class="wrap">
 <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>코방의 홈</span></a>
-<a class="tel" href="tel:01021900192">010-2190-0192</a>
+<a class="tel" href="tel:01021900192"><span class="tel-desktop">전화 문의</span><span class="tel-mobile">010-2190-0192</span></a>
 </div></header>
 
 <div class="wrap">
@@ -69,7 +71,7 @@ summary{cursor:pointer;min-height:32px}
 <a class="back" href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>틈가드 안내로 돌아가기</a>
 <div>
 <h1>간편 상담 · 방문상담 신청</h1>
-<p class="lead">희망 날짜와 연락처만 남겨주세요. 먼저 전화로 창 상태를 여쭙고, 필요하면 방문 실측 일정을 잡아드려요.</p>
+<p class="lead">연락처를 남기면 전화 상담 후 방문 일정을 안내해 드려요.</p>
 </div>
 <div class="notice">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:3px"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
