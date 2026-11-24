@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>코방의 홈 · 틈가드 간편 상담·방문상담 신청</title>
+<meta name="description" content="틈가드 간편 상담·방문상담 신청 (서울·경기)">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F6F8FB;font-family:'Noto Sans KR',system-ui,sans-serif;color:#1A2433;word-break:keep-all;line-height:1.6;font-size:17px}
+a{color:#0B6FB8}a:hover{color:#08507F}
+input,textarea,button{font-family:inherit}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #0B6FB8;outline-offset:2px}
+input::placeholder,textarea::placeholder{color:#6B7482}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #E3E8EF}
+header .wrap{padding-top:10px;padding-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1A2433;min-height:44px}
+.brand img{width:40px;height:40px;display:block}
+.brand span{font-size:20px;font-weight:900;letter-spacing:-.5px}
+.tel{text-decoration:none;color:#0B6FB8;font-weight:700;font-size:16px;min-height:44px;display:flex;align-items:center}
+main{padding:28px 0 64px;display:flex;flex-direction:column;gap:22px}
+.back{align-self:flex-start;font-size:15px;text-decoration:none;color:#4A5566;min-height:44px;display:flex;align-items:center;gap:6px}
+h1{margin:0;font-size:clamp(26px,6.4vw,36px);line-height:1.3;font-weight:900;letter-spacing:-1px}
+.lead{margin:8px 0 0;font-size:16px;color:#4A5566}
+.notice{background:#FFF8E6;border-radius:14px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+form{background:#fff;border-radius:20px;border:1px solid #E3E8EF;padding:clamp(20px,5vw,30px);display:flex;flex-direction:column;gap:26px}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+legend,.lbl{font-size:18px;font-weight:700;padding:0;margin-bottom:10px}
+.req{color:#B42318}
+.opt{font-size:15px;font-weight:500;color:#4A5566}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pill{width:100%;min-height:56px;border-radius:12px;padding:10px;cursor:pointer;text-align:center;font-size:17px;font-weight:700;background:#fff;color:#1A2433;border:1.5px solid #C5CED9}
+.pill small{display:block;font-size:13px;font-weight:400;margin-top:2px}
+.pill[aria-pressed="true"]{background:#EAF5FD;color:#0B6FB8;border:2px solid #0B6FB8}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:8px 16px;border-radius:999px;font-size:16px;cursor:pointer;background:#fff;color:#1A2433;border:1.5px solid #C5CED9}
+.chip[aria-pressed="true"]{background:#EAF5FD;color:#0B6FB8;border:2px solid #0B6FB8;font-weight:700}
+.help{margin:0;font-size:15px;color:#4A5566}
+label.field{display:flex;flex-direction:column;gap:8px;font-size:18px;font-weight:700}
+.input{height:56px;border:1px solid #C5CED9;border-radius:12px;padding:0 16px;font-size:17px;font-weight:400;background:#fff;color:#1A2433}
+textarea.input{height:auto;padding:14px 16px;resize:vertical}
+.consent{display:flex;gap:12px;align-items:center;font-size:17px;font-weight:700;cursor:pointer;min-height:44px}
+.consent input{width:24px;height:24px;margin:0;flex:none;accent-color:#0B6FB8}
+details{font-size:15px;color:#4A5566;padding-left:36px}
+summary{cursor:pointer;min-height:32px}
+.error{margin:0;background:#FEF3F2;color:#B42318;font-size:16px;font-weight:700;padding:12px 16px;border-radius:10px}
+.submit{height:60px;border:0;border-radius:14px;background:#F5B82E;color:#1A2433;font-size:19px;font-weight:900;cursor:pointer}
+.submit[disabled]{opacity:.6;cursor:wait}
+.done{padding:64px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.summary{width:100%;background:#fff;border:1px solid #E3E8EF;border-radius:18px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.summary div{display:flex;justify-content:space-between;gap:12px}
+.summary span{color:#4A5566}
+.btn-dark{text-decoration:none;background:#1A2433;color:#fff;font-weight:700;font-size:16px;padding:14px 24px;border-radius:12px;min-height:52px;display:flex;align-items:center}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>코방의 홈</span></a>
+<a class="tel" href="tel:01021900192">010-2190-0192</a>
+</div></header>
+
+<div class="wrap">
+<main id="formView">
+<a class="back" href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>틈가드 안내로 돌아가기</a>
+<div>
+<h1>간편 상담 · 방문상담 신청</h1>
+<p class="lead">희망 날짜와 연락처만 남겨주세요. 먼저 전화로 창 상태를 여쭙고, 필요하면 방문 실측 일정을 잡아드려요.</p>
+</div>
+<div class="notice">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:3px"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+<span>현재 <strong>서울·경기 지역만 시공</strong>할 수 있어요. 방문 실측비 1만 원은 시공하시면 전액 차감돼요.</span>
+</div>
+
+<form id="f" novalidate>
+<fieldset>
+<legend>상담 방식 <span class="req">*</span></legend>
+<div class="grid2" data-group="type">
+<button type="button" class="pill" data-v="간편 상담(전화)" aria-pressed="true">간편 상담<small>전화로 먼저 상담</small></button>
+<button type="button" class="pill" data-v="방문상담" aria-pressed="false">방문상담<small>실측비 1만 원 · 시공 시 차감</small></button>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>상담 희망일 <span class="req">*</span></legend>
+<div class="grid2" data-group="day">
+<button type="button" class="pill" data-v="tomorrow" aria-pressed="true">내일</button>
+<button type="button" class="pill" data-v="pick" aria-pressed="false">날짜 선택</button>
+</div>
+<label class="field" id="dateWrap" hidden style="font-size:15px;font-weight:500">날짜를 골라주세요
+<input class="input" type="date" id="date">
+</label>
+<p class="help">희망 상담일: <strong id="dateLabel" style="color:#1A2433"></strong></p>
+</fieldset>
+
+<fieldset>
+<legend>상담 희망시간 <span class="req">*</span></legend>
+<div class="grid2" data-group="time">
+<button type="button" class="pill" data-v="오전" aria-pressed="false">오전</button>
+<button type="button" class="pill" data-v="오후" aria-pressed="false">오후</button>
+</div>
+<p class="help">희망 시간이에요. 접수 확인 후 연락드리며, 운영시간 외 요청은 다음 영업일에 확인해요.</p>
+</fieldset>
+
+<fieldset>
+<legend>지역 <span class="req">*</span></legend>
+<div class="grid2" data-group="region">
+<button type="button" class="pill" data-v="서울" aria-pressed="false">서울</button>
+<button type="button" class="pill" data-v="경기" aria-pressed="false">경기</button>
+</div>
+</fieldset>
+
+<label class="field"><span>이름 <span class="req">*</span></span>
+<input class="input" type="text" id="name" autocomplete="name" placeholder="성함을 입력해 주세요">
+</label>
+
+<label class="field"><span>연락처 <span class="req">*</span></span>
+<input class="input" type="tel" id="phone" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000">
+</label>
+
+<fieldset>
+<legend>가장 불편한 점 <span class="opt">(여러 개 선택)</span></legend>
+<div class="chips" id="worries">
+<button type="button" class="chip" aria-pressed="false">찬바람·외풍</button>
+<button type="button" class="chip" aria-pressed="false">난방비</button>
+<button type="button" class="chip" aria-pressed="false">냄새</button>
+<button type="button" class="chip" aria-pressed="false">먼지</button>
+<button type="button" class="chip" aria-pressed="false">소음</button>
+<button type="button" class="chip" aria-pressed="false">벌레</button>
+</div>
+</fieldset>
+
+<label class="field"><span>추가 문의 <span class="opt">(선택)</span></span>
+<textarea class="input" id="memo" rows="4" placeholder="창 개수, 바람이 드는 위치 등 편하게 알려주세요"></textarea>
+</label>
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="consent"><input type="checkbox" id="consent">[필수] 개인정보 수집·이용 동의</label>
+<details><summary>자세히 보기</summary>
+<p style="margin:6px 0 0">수집 항목: 이름, 연락처, 지역, 상담 희망일·시간, 문의 내용<br>이용 목적: 상담 연락 및 방문 실측 일정 안내<br>보유 기간: 상담 완료 후 1년, 이후 파기<br>동의하지 않으실 수 있으나, 이 경우 상담 신청이 어려워요.</p>
+</details>
+</div>
+
+<p class="error" id="err" role="alert" hidden></p>
+<button type="submit" class="submit" id="submitBtn">상담 신청하기</button>
+</form>
+<p class="help" style="text-align:center">급하시면 바로 전화 주세요 · <a href="tel:01021900192" style="font-weight:700">010-2190-0192</a></p>
+</main>
+
+<main id="doneView" class="done" hidden>
+<span style="width:72px;height:72px;border-radius:50%;background:#FFF8E6;display:flex;align-items:center;justify-content:center"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0B6FB8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+<h1 style="font-size:clamp(24px,6vw,32px)"><span id="dName"></span>님, 상담 신청이 접수됐어요</h1>
+<p class="help" style="font-size:17px">희망하신 시간에 맞춰 <span id="dPhone"></span>로 연락드릴게요.</p>
+<div class="summary">
+<div><span>상담 방식</span><strong id="dType"></strong></div>
+<div><span>희망 일시</span><strong id="dWhen"></strong></div>
+<div><span>지역</span><strong id="dRegion"></strong></div>
+</div>
+<p class="help">창 전체(닫힘·열림)와 바람 드는 곳 근접 사진을 준비해 두시면 상담이 더 빨라져요.</p>
+<a class="btn-dark" href="index.html">틈가드 안내 다시 보기</a>
+</main>
+</div>
+
+<script>
+// 구글 시트 연동 주소 (Apps Script 웹 앱)
+var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzTg5VwM2IGRs-hQzmHTYjk8uGidtoHzSFsY78XrW-jWdNPSpSF5UK1aoS8_tKane0W2w/exec';
+
+var state = { type: '간편 상담(전화)', day: 'tomorrow', time: '', region: '' };
+var W = ['일','월','화','수','목','금','토'];
+function fmt(d){ return (d.getMonth()+1)+'월 '+d.getDate()+'일 ('+W[d.getDay()]+')'; }
+function iso(d){ var p=function(n){return (n<10?'0':'')+n}; return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); }
+var tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+var $ = function(id){ return document.getElementById(id); };
+$('date').min = iso(tomorrow);
+
+function dateValue(){
+  if (state.day === 'tomorrow') return { iso: iso(tomorrow), label: fmt(tomorrow) };
+  var v = $('date').value; if (!v) return null;
+  var p = v.split('-'); return { iso: v, label: fmt(new Date(+p[0], +p[1]-1, +p[2])) };
+}
+function renderDate(){
+  $('dateWrap').hidden = state.day !== 'pick';
+  var d = dateValue(); $('dateLabel').textContent = d ? d.label : '날짜를 골라주세요';
+}
+document.querySelectorAll('[data-group]').forEach(function(g){
+  g.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    g.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    state[g.dataset.group] = b.dataset.v; $('err').hidden = true; renderDate();
+  });
+});
+$('date').addEventListener('change', renderDate);
+$('worries').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b) return;
+  b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+});
+renderDate();
+
+// 유입 경로: 주소 뒤 ?src=블로그 처럼 붙이면 시트 '유입 경로'에 기록
+var params = new URLSearchParams(location.search);
+var source = params.get('src') || params.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : '직접 방문');
+
+function fail(msg){ $('err').textContent = msg; $('err').hidden = false; }
+
+$('f').addEventListener('submit', function(e){
+  e.preventDefault();
+  var d = dateValue(), name = $('name').value.trim(), phone = $('phone').value.trim();
+  if (!d) return fail('상담 희망 날짜를 골라주세요.');
+  if (!state.time) return fail('상담 희망시간(오전/오후)을 골라주세요.');
+  if (!state.region) return fail('지역(서울/경기)을 골라주세요.');
+  if (!name) return fail('이름을 입력해 주세요.');
+  if (phone.replace(/[^0-9]/g,'').length < 10) return fail('연락처를 정확히 입력해 주세요.');
+  if (!$('consent').checked) return fail('개인정보 수집·이용에 동의해 주세요.');
+  var worries = [].map.call(document.querySelectorAll('#worries [aria-pressed="true"]'), function(b){ return b.textContent; });
+  var payload = { type: state.type, date: d.label, time: state.time, region: state.region, name: name, phone: phone, worries: worries, memo: $('memo').value.trim(), consent: true, source: source };
+  var btn = $('submitBtn'); btn.disabled = true; btn.textContent = '접수 중…';
+  fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+    .then(function(r){ return r.json(); })
+    .then(function(res){
+      if (!res.ok) throw new Error(res.error || 'fail');
+      $('dName').textContent = name; $('dPhone').textContent = phone;
+      $('dType').textContent = state.type; $('dWhen').textContent = d.label + ' ' + state.time; $('dRegion').textContent = state.region;
+      $('formView').hidden = true; $('doneView').hidden = false; window.scrollTo(0, 0);
+    })
+    .catch(function(){
+      btn.disabled = false; btn.textContent = '상담 신청하기';
+      fail('접수 중 문제가 생겼어요. 잠시 후 다시 시도하시거나 010-2190-0192로 전화 주세요.');
+    });
+});
+</script>
+</body>
+</html>
